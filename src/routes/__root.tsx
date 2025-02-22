@@ -19,7 +19,7 @@ function scanReactApp() {
   });
 }
 
-import.meta.env.NODE_ENV === 'development' && scanReactApp();
+import.meta.env.MODE === 'development' && scanReactApp();
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   component: RootRouteComponent,
