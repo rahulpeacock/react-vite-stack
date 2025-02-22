@@ -1,9 +1,9 @@
 import { QueryProvider } from '@/client/providers/query-provider';
+import { TanStackRouterDevtools } from '@/client/providers/router-devtools';
 import { ThemeProvider } from '@/client/providers/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import type { QueryClient } from '@tanstack/react-query';
 import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import React from 'react';
 import { scan } from 'react-scan';
 import { Fragment } from 'react/jsx-runtime';
@@ -26,6 +26,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 });
 
 function RootRouteComponent() {
+  console.log(import.meta.env.MODE);
   return (
     <Fragment>
       <ThemeProvider>

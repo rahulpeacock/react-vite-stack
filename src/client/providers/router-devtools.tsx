@@ -1,13 +1,7 @@
-import React from 'react';
+import { TanStackRouterDevtools as _DevTools } from '@tanstack/router-devtools';
 
-export const TanStackRouterDevtools =
-  import.meta.env.MODE === 'production'
-    ? () => null // Render nothing in production
-    : React.lazy(() =>
-        // Lazy load in development
-        import('@tanstack/router-devtools').then((res) => ({
-          default: res.TanStackRouterDevtools,
-          // For Embedded Mode
-          // default: res.TanStackRouterDevtoolsPanel
-        })),
-      );
+export function TanStackRouterDevtools() {
+  if (import.meta.env.MODE === 'production') return null;
+
+  return <_DevTools />;
+}
