@@ -12,6 +12,12 @@ function Index() {
       <Button asChild>
         <Link to='/about'>About</Link>
       </Button>
+      <Button asChild>
+        <Link to='/posts'>Posts</Link>
+      </Button>
+      <Button asChild>
+        <Link to='/posts/post'>Individual Post</Link>
+      </Button>
     </div>
   );
 }
