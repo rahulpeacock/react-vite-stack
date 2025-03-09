@@ -1,4 +1,4 @@
-import { TanStackRouterDevtools as _DevTools } from '@tanstack/router-devtools';
+import { TanStackRouterDevtools as _DevTools } from '@tanstack/react-router-devtools';
 
 export function TanStackRouterDevtools() {
   if (import.meta.env.MODE === 'production') return null;
