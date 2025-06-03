@@ -26,7 +26,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 });
 
 function RootRouteComponent() {
-  console.log(import.meta.env.MODE);
   return (
     <Fragment>
       <ThemeProvider>
