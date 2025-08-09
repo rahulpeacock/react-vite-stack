@@ -1,0 +1,42 @@
+name: Deploy to cloudflare pages
+
+on:
+  push: 
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.4.0
+
+      - name: Install node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build the app
+        env: 
+          VITE_SERVER_V1_URL: ${{ secrets.VITE_SERVER_V1_URL }}
+        run: |
+          pnpm build && cp _headers ./dist/_headers
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./dist --project-name=nxtagent-admin-frontend-dev --branch=dev
