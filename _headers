@@ -1,0 +1,2 @@
+/assets/*
+  Cache-Control: private, max-age=86400, stale-while-revalidate=604800
