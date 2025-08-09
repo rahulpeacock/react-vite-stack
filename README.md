@@ -17,15 +17,17 @@ A simple, flexible and batteries-included starter template to kickstart your Rea
 3. Configure the environment variables ```cp .env.example .env.development.local```
 4. Create the certificates for ```https``` which is configured in the ```vite.config.ts```
 5. Install dependencies ```pnpm install```
-6. Starting the development server ```pnpm dev```
-7. This will launch the app in development mode. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
+
+## Development
+1. Starting the development server ```pnpm dev```
+2. This will launch the app in development mode. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 > Make sure you have __Node.js__ and __pnpm__ installed in your machine
 
 ## Self-hosting using nginx
 1. Copy the environment variables ```cp .env.example .env.production.local```
 2. Build the application ```pnpm build```
-3. Serve the application using nginx
+3. Serve the ```dist``` directory using nginx as an SPA
 
 ## Deploying to cloudflare pages
 1. Setup the environment variables and cloudflare api token at GitHub secrets > Actions
