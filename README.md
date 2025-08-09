@@ -1,7 +1,7 @@
-## ⚛️ React + Vite Sass kit
+# ⚛️ React + Vite Sass kit
 A simple, flexible and batteries-included starter template to kickstart your React projects with ease.
 
-#### The Stack includes
+## The Stack includes
 - [Typescript](https://www.typescriptlang.org/) for type safe and scalable React app
 - [React.js](https://react.dev/) as the library for building frontend application
 - [Tanstack Router](https://tanstack.com/router/latest) for type-safe and flexible client-side routing for React app
@@ -11,45 +11,25 @@ A simple, flexible and batteries-included starter template to kickstart your Rea
 - [Biome](https://biomejs.dev/) for formatting and linting
 - [pnpm](https://pnpm.io/) as fast, efficient package-manager
 
-#### Installation
+## Installation
 1. Clone the repository ```git clone https://github.com/rahulpeacock/react-vite-stack.git```
 2. Navigate to the directory ```cd react-vite-stack```
-3. Install dependencies ```pnpm install```
-4. Starting the development server ```pnpm dev```
-5. This will launch the app in development mode. Open [http://localhost:5143](http://localhost:5143) to view it in the browser.
+3. Configure the environment variables ```cp .env.example .env.development.local```
+4. Create the certificates for ```https``` which is configured in the ```vite.config.ts```
+5. Install dependencies ```pnpm install```
+6. Starting the development server ```pnpm dev```
+7. This will launch the app in development mode. Open [https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 > Make sure you have __Node.js__ and __pnpm__ installed in your machine
 
-#### Project Structure
-```
-.
-├── public
-│   └── ...
-├── src
-│   ├── client
-│   │   ├── providers
-│   │   └── store
-│   ├── components
-│   │   ├── global
-│   │   └── ui
-│   ├── lib
-│   │   └── utils.ts
-│   ├── routes
-│   │   ├── __root.tsx
-│   │   └── index.tsx
-│   ├── styles
-│   │   └── main.css
-│   ├── main.tsx
-│   └── ...
-├── .gitignore
-├── biome.json
-├── components.json
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-├── vite.config.ts
-└── ...
-```
+## Self-hosting using nginx
+1. Copy the environment variables ```cp .env.example .env.production.local```
+2. Build the application ```pnpm build```
+3. Serve the application using nginx
 
-#### Support & Contribute
+## Deploying to cloudflare pages
+1. Setup the environment variables and cloudflare api token at GitHub secrets > Actions
+2. Use the workflow ```.github/workflows/deploy-pages.yaml```
+
+## Support & Contribute
 If you found this project helpful or enjoyed using it, please consider giving it a ⭐️ on GitHub! It helps others find the project and motivates us to keep improving.
