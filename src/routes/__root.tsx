@@ -28,7 +28,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 function RootRouteComponent() {
   return (
     <Fragment>
-      <ThemeProvider>
+      <ThemeProvider defaultTheme='light'>
         <QueryProvider>
           <Outlet />
           <Toaster />

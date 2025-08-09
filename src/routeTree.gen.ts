@@ -8,97 +8,97 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root';
-import { Route as AboutRouteImport } from './routes/about';
-import { Route as IndexRouteImport } from './routes/index';
-import { Route as PostsIndexRouteImport } from './routes/posts/index';
-import { Route as PostsPostIndexRouteImport } from './routes/posts/post.index';
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as PostsIndexRouteImport } from './routes/posts/index'
+import { Route as PostsPostIndexRouteImport } from './routes/posts/post.index'
 
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const PostsIndexRoute = PostsIndexRouteImport.update({
   id: '/posts/',
   path: '/posts/',
   getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/posts/index.lazy').then((d) => d.Route));
+} as any).lazy(() => import('./routes/posts/index.lazy').then((d) => d.Route))
 const PostsPostIndexRoute = PostsPostIndexRouteImport.update({
   id: '/posts/post/',
   path: '/posts/post/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/posts': typeof PostsIndexRoute;
-  '/posts/post': typeof PostsPostIndexRoute;
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/posts': typeof PostsIndexRoute
+  '/posts/post': typeof PostsPostIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/posts': typeof PostsIndexRoute;
-  '/posts/post': typeof PostsPostIndexRoute;
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/posts': typeof PostsIndexRoute
+  '/posts/post': typeof PostsPostIndexRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/posts/': typeof PostsIndexRoute;
-  '/posts/post/': typeof PostsPostIndexRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/posts/': typeof PostsIndexRoute
+  '/posts/post/': typeof PostsPostIndexRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/about' | '/posts' | '/posts/post';
-  fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/about' | '/posts' | '/posts/post';
-  id: '__root__' | '/' | '/about' | '/posts/' | '/posts/post/';
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/about' | '/posts' | '/posts/post'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/about' | '/posts' | '/posts/post'
+  id: '__root__' | '/' | '/about' | '/posts/' | '/posts/post/'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  AboutRoute: typeof AboutRoute;
-  PostsIndexRoute: typeof PostsIndexRoute;
-  PostsPostIndexRoute: typeof PostsPostIndexRoute;
+  IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  PostsIndexRoute: typeof PostsIndexRoute
+  PostsPostIndexRoute: typeof PostsPostIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/about': {
-      id: '/about';
-      path: '/about';
-      fullPath: '/about';
-      preLoaderRoute: typeof AboutRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/posts/': {
-      id: '/posts/';
-      path: '/posts';
-      fullPath: '/posts';
-      preLoaderRoute: typeof PostsIndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/posts/'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof PostsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/posts/post/': {
-      id: '/posts/post/';
-      path: '/posts/post';
-      fullPath: '/posts/post';
-      preLoaderRoute: typeof PostsPostIndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/posts/post/'
+      path: '/posts/post'
+      fullPath: '/posts/post'
+      preLoaderRoute: typeof PostsPostIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,5 +107,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   PostsIndexRoute: PostsIndexRoute,
   PostsPostIndexRoute: PostsPostIndexRoute,
-};
-export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
+}
+export const routeTree = rootRouteImport
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
