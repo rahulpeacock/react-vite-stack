@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import './styles.css';
 
 export function DotLoader({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
