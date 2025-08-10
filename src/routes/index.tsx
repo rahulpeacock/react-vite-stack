@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
 import { SCLoader } from '@/components/global/loaders';
 import { Button } from '@/components/ui/button';
+import { Link, createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
   component: Index,

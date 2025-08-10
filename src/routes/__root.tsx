@@ -1,12 +1,12 @@
-import type { QueryClient } from '@tanstack/react-query';
-import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
-import React from 'react';
-import { Fragment } from 'react/jsx-runtime';
-import { scan } from 'react-scan';
 import { QueryProvider } from '@/client/providers/query-provider';
 import { TanStackRouterDevtools } from '@/client/providers/router-devtools';
 import { ThemeProvider } from '@/client/providers/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
+import type { QueryClient } from '@tanstack/react-query';
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
+import React from 'react';
+import { scan } from 'react-scan';
+import { Fragment } from 'react/jsx-runtime';
 
 interface MyRouterContext {
   queryClient: QueryClient;

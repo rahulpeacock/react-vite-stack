@@ -1,4 +1,4 @@
-import { err, ok, type Result, ResultAsync } from 'neverthrow';
+import { type Result, ResultAsync, err, ok } from 'neverthrow';
 import type { LoginResposne, PublicRouteFetchError } from './types';
 
 export const auth = {
