@@ -99,7 +99,7 @@ export function BarSpinner() {
 
 export function SCLoader({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg width='20' height='20' viewBox='0 0 20 20' className={cn('animate-[spin_300ms_linear_infinite] stroke-current', className)} {...props}>
+    <svg width='20' height='20' viewBox='0 0 20 20' className={cn('animate-spin animation-duration-300 stroke-current', className)} {...props}>
       <title>loader</title>
       {/* <circle cx='10' cy='10' r='8' stroke-width='2' stroke='var(--gray-700)' fill='none' stroke-linecap='round' /> */}
       <circle
