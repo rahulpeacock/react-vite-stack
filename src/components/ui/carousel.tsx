@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
 import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -104,10 +104,10 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
         canScrollNext,
       }}
     >
+      {/** biome-ignore lint/a11y/useSemanticElements: usage required for aria-roledescription attribute not supported by section element */}
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
-        // biome-ignore lint/a11y/useSemanticElements: usage required for aria-roledescription attribute not supported by section element
         role='region'
         aria-roledescription='carousel'
         data-slot='carousel'
@@ -133,6 +133,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel();
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: usage of div as a semantic element
     <div
       role='group'
       aria-roledescription='slide'

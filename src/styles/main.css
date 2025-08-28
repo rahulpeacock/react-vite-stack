@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: tailwindcss v4 */
 @custom-variant dark (&:is(.dark *));
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: tailwindcss v4 */
 @theme inline {
   --font-inter: "Inter", sans-serif;
 
@@ -149,9 +151,11 @@
 
 @layer base {
   * {
+    /* biome-ignore lint/suspicious/noUnknownAtRules: tailwindcss v4 */
     @apply border-border outline-ring/50;
   }
   body {
+    /* biome-ignore lint/suspicious/noUnknownAtRules: tailwindcss v4 */
     @apply bg-background text-foreground font-inter;
   }
 

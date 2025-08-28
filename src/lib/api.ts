@@ -1,4 +1,4 @@
-import { type Result, ResultAsync, err, ok } from 'neverthrow';
+import { err, ok, type Result, ResultAsync } from 'neverthrow';
 import type { LoginResposne, PublicRouteFetchError } from './types';
 
 export const auth = {
@@ -14,7 +14,7 @@ export const auth = {
     );
 
     if (res.isErr()) {
-      return err({ type: 'FAILED_TO_FETCH' });
+      return err({ type: `FAILED_TO_FETCH` });
     }
 
     if (res.value.status === 201) {
