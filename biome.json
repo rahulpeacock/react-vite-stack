@@ -11,19 +11,11 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "style": {
-        "noNonNullAssertion": "off"
-      },
-      "suspicious": {
-        "noEmptyInterface": "off"
-      },
-      "a11y": {
-        "useKeyWithClickEvents": "off",
-        "useKeyWithMouseEvents": "off"
-      },
-      "correctness": {
-        "noUnusedImports": "warn"
+        "useNumberNamespace": "error",
+        "noUnusedTemplateLiteral": "warn",
+        "noUselessElse": "warn",
+        "useSelfClosingElements": "warn"
       }
     }
   },
