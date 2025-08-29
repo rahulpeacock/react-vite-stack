@@ -14,7 +14,7 @@ export const auth = {
     );
 
     if (res.isErr()) {
-      return err({ type: `FAILED_TO_FETCH` });
+      return err({ type: 'FAILED_TO_FETCH' });
     }
 
     if (res.value.status === 201) {
